@@ -1,0 +1,8 @@
+../Core/Src/main.c:79:6:HAL_TIM_IC_CaptureCallback	16	static
+../Core/Src/main.c:152:5:main	24	static,ignoring_inline_asm
+../Core/Src/main.c:240:6:SystemClock_Config	88	static
+../Core/Src/main.c:283:13:MX_TIM2_Init	48	static
+../Core/Src/main.c:341:13:MX_TIM5_Init	48	static
+../Core/Src/main.c:399:13:MX_USART1_UART_Init	8	static
+../Core/Src/main.c:432:13:MX_GPIO_Init	40	static
+../Core/Src/main.c:474:6:Error_Handler	4	static,ignoring_inline_asm
