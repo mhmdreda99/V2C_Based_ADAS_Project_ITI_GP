@@ -1,0 +1,15 @@
+../Core/Src/main.c:103:6:HAL_TIM_IC_CaptureCallback	16	static
+../Core/Src/main.c:192:6:main	128	static
+../Core/Src/main.c:286:7:SystemClock_Config	88	static
+../Core/Src/main.c:329:14:MX_SPI1_Init	8	static
+../Core/Src/main.c:367:14:MX_TIM2_Init	48	static
+../Core/Src/main.c:425:14:MX_TIM5_Init	48	static
+../Core/Src/main.c:483:14:MX_GPIO_Init	40	static
+../Core/Src/main.c:518:7:EnableUltrasonic_1_TimerInterrutp	8	static,ignoring_inline_asm
+../Core/Src/main.c:523:7:EnableUltrasonic_2_TimerInterrutp	8	static,ignoring_inline_asm
+../Core/Src/main.c:538:7:triggerUltrasonic_1_Task	24	static
+../Core/Src/main.c:561:7:indecateOnLED_1_Task	16	static
+../Core/Src/main.c:592:7:triggerUltrasonic_2_Task	24	static
+../Core/Src/main.c:616:7:indecateOnLED_2_Task	16	static
+../Core/Src/main.c:645:7:HAL_TIM_PeriodElapsedCallback	16	static
+../Core/Src/main.c:662:7:Error_Handler	4	static,ignoring_inline_asm
