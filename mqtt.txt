@@ -1,0 +1,53 @@
+MQTT between two Raspberry Pis using hiveMQ server 
+--------------------------------------------------
+
+- Set up the HiveMQ server. You can use HiveMQ Cloud or install HiveMQ Community Edition on a separate server.
+- Install the MQTT client and publisher libraries on the Raspberry Pis. You can use the Paho MQTT client library for Python or another programming language.
+- Write a Python script for the publisher. The script should connect to the HiveMQ server and publish messages to a topic. For example, the following script publishes the message "Hello, world!" to the topic my-topic:
+Python
+import paho.mqtt.client as mqtt
+
+# Create a MQTT client object
+client = mqtt.Client()
+
+# Connect to the HiveMQ server
+client.connect("localhost", 1883)
+
+# Publish a message to the topic "my-topic"
+client.publish("my-topic", "Hello, world!")
+
+# Disconnect from the HiveMQ server
+client.disconnect()
+-------------------------------------------------------------
+Write a Python script for the client. The script should connect to the HiveMQ server and subscribe to the topic that the publisher is publishing to. For example, the following script subscribes to the topic my-topic and prints any messages that are received:
+Python
+import paho.mqtt.client as mqtt
+
+# Create a MQTT client object
+client = mqtt.Client()
+
+# Connect to the HiveMQ server
+client.connect("localhost", 1883)
+
+# Subscribe to the topic "my-topic"
+client.subscribe("my-topic")
+
+# Define a callback function that will be called when a message is received
+def on_message(client, userdata, msg):
+    print(msg.topic, ":", msg.payload)
+
+# Set the callback function
+client.on_message = on_message
+
+# Start a loop to listen for messages
+client.loop_forever()
+---------------------------------------------------------------
+Run the publisher script on one Raspberry Pi and the client script on the other Raspberry Pi.
+
+Type a message in the publisher script and press Enter. The message will be published to the HiveMQ server.
+
+On the client Raspberry Pi, you should see the message printed to the console.
+
+Once you have this basic working example, you can modify the scripts to implement your own document writing application. For example, you could have the publisher script read the contents of a file and publish each line as a separate message. The client script could then subscribe to the topic and write the received messages to a new file.
+
+You could also use MQTT to implement more complex features, such as real-time collaboration between multiple users or support for multiple documents.
