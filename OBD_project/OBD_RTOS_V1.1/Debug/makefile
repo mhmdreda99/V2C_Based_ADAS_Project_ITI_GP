@@ -64,8 +64,8 @@ all: main-build
 main-build: OBD_RTOS_V1.1.elf secondary-outputs
 
 # Tool invocations
-OBD_RTOS_V1.1.elf OBD_RTOS_V1.1.map: $(OBJS) $(USER_OBJS) E:\ITI\ Embedd\ Sys\GP\New\ folder\Timer2_I2C_EEPROM_System\STM32F401CCUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "OBD_RTOS_V1.1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\ITI Embedd Sys\GP\New folder\Timer2_I2C_EEPROM_System\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OBD_RTOS_V1.1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+OBD_RTOS_V1.1.elf OBD_RTOS_V1.1.map: $(OBJS) $(USER_OBJS) E:\ITI\ Embedd\ Sys\GP\V2C_Based_ADAS_Project_ITI_GP\OBD_project\OBD_RTOS_V1.1\STM32F401CCUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "OBD_RTOS_V1.1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\ITI Embedd Sys\GP\V2C_Based_ADAS_Project_ITI_GP\OBD_project\OBD_RTOS_V1.1\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OBD_RTOS_V1.1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
