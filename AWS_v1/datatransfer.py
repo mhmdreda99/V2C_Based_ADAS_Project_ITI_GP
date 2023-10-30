@@ -19,27 +19,22 @@ myMQTTClient.configureMQTTOperationTimeout(5) # 5 sec
 
 print ('Initiating Realtime Data Transfer From Gateway Raspberry Pi...')
 myMQTTClient.connect()
-
+BSAstate = 'Error' 
 
 while True:
-    Temp = int(uniform(20,26))
-    print("publish from Rasp.."+str(Temp))
-    myMQTTClient.publish(
-       topic="RealTimeDataTransfer/Temperature",
-       QoS=1,
-       payload='{"Temperature:"'+str(Temp)+'"}')
+    Temperature = int(uniform(20,26))
     FuelLevel = int(uniform(0,100))
-    print("publish from Rasp.."+str(FuelLevel))
+    Elapsedtime = int(uniform(500,1000))
     myMQTTClient.publish(
-       topic="RealTimeDataTransfer/Fuellevel",
-       QoS=1,
-       payload='{"Fuel Level:"'+str(FuelLevel)+'"}')
-    Time = int(uniform(500,1000))
-    print("publish from Rasp.."+str(Time))
-    myMQTTClient.publish(
-       topic="RealTimeDataTransfer/Time",
-       QoS=1,
-       payload='{"Elapsed Time:"'+str(Time)+'"}')   
-    
+    topic="RealTime/Data",
+    QoS=1,
+    payload=json.dumps({
+    'Temperature': Temperature,
+    'FuelLevel': FuelLevel,
+    'Elapsedtime': Elapsedtime,
+    'BSA_state':BSAstate
+    })
+    )  
+
     time.sleep(2)
 
