@@ -6,6 +6,7 @@ def lambda_handler(event, context):
     response = client.put_item(
         TableName = 'newTable_v5',
         Item = {
+            'No':{'N': str(event['No'])}
             'Temperature':{'N': str(event['Temperature'])},
             'FuelLevel':{'N': str(event['FuelLevel'])},
             'Elapsedtime':{'N': str(event['Elapsedtime'])},
@@ -22,4 +23,5 @@ def lambda_handler(event, context):
   "FuelLevel": 0,
   "Elapsedtime": 0,
   "BSA_state": 0
+  "No":0
 }
