@@ -18,8 +18,8 @@ def lambda_handler(event, context):
     
     
 {
-  "Temperature": 20,
+  "Temperature": 0,
   "FuelLevel": 0,
-  "Elapsedtime": 500,
-  "BSA_state": "Error"
+  "Elapsedtime": 0,
+  "BSA_state": 0
 }
