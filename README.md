@@ -1,10 +1,26 @@
 # V2C_Based_ADAS_Project_ITI_GP
 
-
-
 ![Cover](https://github.com/mhmdreda99/V2C_Based_ADAS_Project_ITI_GP/blob/master/Docs/images/nexusjpeg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+
+## Overview
 This repo. contains all codes and designs for V2C project integrates cloud computing, Raspberry Pi, and STM32 for a Blind Spot Assistant in Advanced Driver Assistance Systems. It enhances vehicle safety through innovative V2C technology, cloud communication, and sensor data.
+
+
+## Table of Contents
+- [V2C\_Based\_ADAS\_Project\_ITI\_GP](#v2c_based_adas_project_iti_gp)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [To-Do](#to-do)
+    - [Running the Project](#running-the-project)
+  - [Branches](#branches)
+  - [Authors](#authors)
+  - [License](#license)
+  - [Acknowledgments](#acknowledgments)
+
 
 ## Getting Started
 
@@ -12,78 +28,71 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Ensure you have the following installed:
 
-```
-Give examples
-```
-## To Do
-- [x] XXXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxx
-- [ ] XXXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxx
-- [ ] XXXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxxxx
+- [Raspberry Pi](https://www.raspberrypi.org/) with Raspbian OS
+- [STM32 IDE](https://www.st.com/en/development-tools/stm32cubeide.html)
+- [Python](https://www.python.org/) (Version X.X or higher)
 
 
-### Installing
+### Installation
 
-A step by step series of examples that tell you how to get a development env running
+1. Clone the repository to your Raspberry Pi:
 
-Say what the step will be
+    ```bash
+    git clone https://github.com/mhmdreda99/V2C_Based_ADAS_Project_ITI_GP.git
+    ```
 
-```
-Give the example
-```
+2. Open the STM32 IDE and load the STM32 project from the `STM32` directory.
 
-And repeat
+3. Install Python dependencies:
 
-```
-until finished
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-End with an example of getting some data out of the system or using it for a little demo
+4. Follow the specific setup steps for your project components.
 
-## Running the tests
+### To-Do
 
-Explain how to run the automated tests for this system
+Before running the project, make sure to complete the following to-do items:
 
-### Break down into end to end tests
+- Configure the Raspberry Pi with necessary dependencies.
+- Connect and configure the STM32 board.
+- Any additional project-specific steps.
 
-Explain what these tests test and why
+### Running the Project
 
-```
-Give an example
-```
+Follow the instructions in your STM32 IDE documentation to build and upload the firmware to the STM32 board.
 
-### And coding style tests
+For Raspberry Pi components, execute the necessary Python scripts or commands.
 
-Explain what these tests test and why
+## Branches
 
-```
-Give an example
-```
+- `master` - Default branch
+- `AWS`
+- `BlindSpotAssistant`
+- `Feature_Voice_Recognition`
+- `GPS`
+- `MQTT`
+- `OBD_Timer`
+- `OBD_Timer2`
+- `OBD_WaterLevel`
+- `OBD`
+- `gateWayUART`
+- `mqtt`
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Mohamed Reda** - *Team Leader* - [mhmdreda99](https://github.com/mhmdreda99)
+* *Mohamed Reda* - *Team Leader* - [mhmdreda99](https://github.com/mhmdreda99)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+- Amr Darwish [Amr Darwish](https://github.com/AmrDarwish)
+- Abdel-Hamid Tarek - [Abdel-Hamidd](https://github.com/Abdel-Hamidd)
+- Yasmen Ehab - [YasmenEhab](https://github.com/YasmenEhab)
+-  Mostafa Ibrahim - [MostafaIibrahim](https://github.com/MostafaIibrahim)
+
+See also the list of [contributors](https://github.com/mhmdreda99/V2C_Based_ADAS_Project_ITI_GP/contributors) who participated in this project.
 
 ## License
 
@@ -91,4 +100,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-- Thanks to our great leader  **Joe Nofal** - *Training Head* 
+- Thanks to our great Supervisors  **Joe Nofal** , **Nour**- *Training Heads* 
