@@ -55,4 +55,4 @@ ___________________________________________________________
 			  
 -- By these steps we Created a Database in AWS cloud and this database is NoSQL and you can send and receive data to this table through your thing.
 ---> Next Step:-
-Import data from Dynamodb table and make a dash board.
+Import data from Dynamodb table and make a dashboard.
