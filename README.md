@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
 ## Overview
-This repo. contains all codes and designs for V2C project integrates cloud computing, Raspberry Pi, and STM32 for a Blind Spot Assistant in Advanced Driver Assistance Systems. It enhances vehicle safety through innovative V2C technology, cloud communication, and sensor data.
+The V2C ADAS Nexus project aims to create a cutting-edge embedded system that seamlessly integrates safety and connectivity features for the automotive industry. By combining Advanced Driver Assistance Systems (ADAS) with Vehicle-to-Cloud (V2C) communication, this project intends to enhance vehicle safety, improve driver experience, and redefine the standard for automotive technology.
 
 
 ## Table of Contents
