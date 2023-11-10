@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ITI Nexus Dashboard</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+</head>
+<body>
+    <div class="FullCont">
+        <img class="Logo" src="img/ITINexus.svg">
+        <div class="DataContainer">
+            
+            <div class="SDataCont">
+                <img src="img/cloudy-weather-3311758-2754892.png">
+                <div>
+                    <p id="Temperature">25°C</p>
+                    <p>Temperature</p>
+                </div>                
+            </div>
+
+
+            <div class="SDataCont">
+                <img src="img/fuel-can-5019532-4185548.png">
+                <div>
+                    <p id="FuelLevel">25%</p>
+                    <p>Fuel Level</p>
+                </div>                
+            </div>
+
+
+            <div class="SDataCont">
+                <img src="img/clock-8701712-7097715.webp">
+                <div>
+                    <p id="TimeElapsed">09:10</p>
+                    <p>Elapsed Time</p>
+                </div>                
+            </div>
+
+            <div class="SDataCont">
+                <img src="img/motion-sensor-4035927-3342606.webp">
+                <div>
+                    <p id="BSAStats">Safe</p>
+                    <p>Blind Spot Alert</p>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="MapContainer">            
+            <div class="folium-map" id="map_c546651c41e8a13b39c8e16e95605721" ></div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <script src='js/script.js'></script>
+    <script src='js/maps.js'></script>
+</body>
+</html>
