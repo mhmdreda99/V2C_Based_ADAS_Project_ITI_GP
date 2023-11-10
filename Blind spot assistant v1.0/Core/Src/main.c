@@ -46,7 +46,7 @@ TIM_HandleTypeDef htim5;
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-uint8_t tx_Buffer[1]={'A'};
+uint8_t tx_Buffer[1]={3};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -200,13 +200,13 @@ int main(void)
 		// if there is something near ultrasonic1 the led will be on
 		if(buffer[0]<20)
 		{
-			tx_Buffer[0]='A';
+
 			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2,GPIO_PIN_SET);
 		}
 		else
 		{
 			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2,GPIO_PIN_RESET);
-			tx_Buffer[0]='B';
+
 		}
 
 		//enable trigger for ultrasonic2
@@ -219,13 +219,14 @@ int main(void)
 		if(buffer[1]<20)
 		{
 			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0,GPIO_PIN_SET);
-			tx_Buffer[0]='C';
+
 		}
 		else
 		{
 			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0,GPIO_PIN_RESET);
-			tx_Buffer[0]='D';
+
 		}
+
 		HAL_UART_Transmit(&huart1, tx_Buffer, 2, 10);
 
 

@@ -38,34 +38,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := Blind
+BUILD_ARTIFACT_NAME := BlindSpotAssistant V4.0
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Blind.elf \
+BlindSpotAssistant\ V4.0.elf \
 
 MAP_FILES += \
-Blind.map \
+BlindSpotAssistant\ V4.0.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Blind.list \
+BlindSpotAssistant\ V4.0.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: Blind.elf secondary-outputs
+main-build: BlindSpotAssistant\ V4.0.elf secondary-outputs
 
 # Tool invocations
-Blind.elf Blind.map: $(OBJS) $(USER_OBJS) D:\iti\ gp\test\BlindSpotAssistant\STM32F401CCUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Blind.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\iti gp\test\BlindSpotAssistant\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Blind.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+BlindSpotAssistant\ V4.0.elf BlindSpotAssistant\ V4.0.map: $(OBJS) $(USER_OBJS) E:\ITI\ Embedd\ Sys\GP\V2C_Based_ADAS_Project_ITI_GP\BlindSpotAssistant\ V4.0\STM32F401CCUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "BlindSpotAssistant V4.0.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\ITI Embedd Sys\GP\V2C_Based_ADAS_Project_ITI_GP\BlindSpotAssistant V4.0\STM32F401CCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BlindSpotAssistant V4.0.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -74,14 +74,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Blind.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Blind.list"
+BlindSpotAssistant\ V4.0.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "BlindSpotAssistant V4.0.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) Blind.elf Blind.list Blind.map default.size.stdout
+	-$(RM) BlindSpotAssistant\ V4.0.elf BlindSpotAssistant\ V4.0.list BlindSpotAssistant\ V4.0.map BlindSpotAssistant\\ V4.0.elf default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
