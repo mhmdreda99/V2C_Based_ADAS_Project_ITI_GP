@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <!-- Meta tags for character set and compatibility -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Title of the webpage -->
     <title>ITI Nexus Dashboard</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>    
+    
+    <!-- Meta tag for responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Link to the external stylesheet for styling -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">    
+    
+    <!-- Links to external fonts from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-
-
-
-
+    
+    <!-- Links to external libraries and stylesheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
@@ -22,10 +28,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
 </head>
 <body>
+    <!-- Main container div -->
     <div class="FullCont">
+        <!-- Logo section -->
         <img class="Logo" src="img/ITINexus.svg">
+        
+        <!-- Data container section -->
         <div class="DataContainer">
-            
+            <!-- Individual data container for Temperature -->
             <div class="SDataCont">
                 <img src="img/cloudy-weather-3311758-2754892.png">
                 <div>
@@ -33,8 +43,8 @@
                     <p>Temperature</p>
                 </div>                
             </div>
-
-
+            
+            <!-- Individual data container for Fuel Level -->
             <div class="SDataCont">
                 <img src="img/fuel-can-5019532-4185548.png">
                 <div>
@@ -42,8 +52,8 @@
                     <p>Fuel Level</p>
                 </div>                
             </div>
-
-
+            
+            <!-- Individual data container for Elapsed Time -->
             <div class="SDataCont">
                 <img src="img/clock-8701712-7097715.webp">
                 <div>
@@ -51,7 +61,8 @@
                     <p>Elapsed Time</p>
                 </div>                
             </div>
-
+            
+            <!-- Individual data container for Blind Spot Alert -->
             <div class="SDataCont">
                 <img src="img/motion-sensor-4035927-3342606.webp">
                 <div>
@@ -59,21 +70,23 @@
                     <p>Blind Spot Alert</p>
                 </div>
             </div>
-
-
-
         </div>
+        
+        <!-- Map container section -->
         <div class="MapContainer">            
-            <div class="folium-map" id="map_c546651c41e8a13b39c8e16e95605721" ></div>
+            <!-- Div for displaying the map using Folium -->
+            <div class="folium-map" id="map_c546651c41e8a13b39c8e16e95605721"></div>
         </div>
     </div>
 
-    
+    <!-- Scripts for external libraries and custom scripts -->
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <script src='js/script.js'></script>
-    <script src='js/maps.js'></script>
+    
+    <!-- Custom JavaScript files -->
+    <script src="js/script.js"></script>
+    <script src="js/maps.js"></script>
 </body>
 </html>
