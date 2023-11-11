@@ -1,0 +1,27 @@
+import boto3
+import json
+
+def lambda_handler(event, context):
+    client = boto3.client('dynamodb')
+    response = client.put_item(
+        TableName = 'newTable_v5',
+        Item = {
+            'No':{'N': str(event['No'])}
+            'Temperature':{'N': str(event['Temperature'])},
+            'FuelLevel':{'N': str(event['FuelLevel'])},
+            'Elapsedtime':{'N': str(event['Elapsedtime'])},
+            'BSA_state': {'S': event['BSA_state']}
+        }
+    )
+    return 0
+    
+    
+    
+    
+{
+  "Temperature": 0,
+  "FuelLevel": 0,
+  "Elapsedtime": 0,
+  "BSA_state": 0
+  "No":0
+}
