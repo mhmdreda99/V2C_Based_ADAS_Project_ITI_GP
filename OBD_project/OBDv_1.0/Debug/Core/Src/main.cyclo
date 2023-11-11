@@ -1,0 +1,17 @@
+../Core/Src/main.c:148:5:main	1
+../Core/Src/main.c:213:6:SystemClock_Config	3
+../Core/Src/main.c:260:13:MX_ADC1_Init	3
+../Core/Src/main.c:312:13:MX_I2C1_Init	2
+../Core/Src/main.c:346:13:MX_TIM1_Init	4
+../Core/Src/main.c:392:13:MX_TIM2_Init	4
+../Core/Src/main.c:437:13:MX_USART1_UART_Init	2
+../Core/Src/main.c:470:13:MX_GPIO_Init	1
+../Core/Src/main.c:507:6:mapDigitalvalueToLeds	6
+../Core/Src/main.c:551:10:GetElapsedTime	1
+../Core/Src/main.c:557:6:EEPROM_voidGetStoredTime	3
+../Core/Src/main.c:581:6:HAL_TIM_PeriodElapsedCallback	2
+../Core/Src/main.c:592:6:microDelay	2
+../Core/Src/main.c:601:9:DHT11_Start	5
+../Core/Src/main.c:637:9:DHT11_Read	7
+../Core/Src/main.c:665:6:DHT11_TempRead	3
+../Core/Src/main.c:701:6:Error_Handler	1
