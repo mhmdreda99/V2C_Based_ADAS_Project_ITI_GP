@@ -1,0 +1,129 @@
+GPS Tracker with Raspberry Pi and NEP 6M GPS Module
+---------------------------------------------------
+
+1. Raspberry Pi: The Raspberry Pi is a small, affordable computer that runs a Linux operating system. It is used to read GPS data from the NEP 6M GPS module, store it in a CSV file, and display the GPS  coordinates on an interactive map.
+
+2. NEP 6M GPS Module: This GPS module is connected to the Raspberry Pi via a serial port. It provides real-time GPS data, including latitude and longitude.
+
+3. Python Script: A Python script is used to read GPS data from the NEP 6M GPS module, store it in a CSV file, and generate an interactive map with markers and a route line. The script utilizes the following libraries:
+       - folium: A Python library for creating interactive maps.
+       - csv: A built-in Python library for working with CSV files.
+       - serial: A library for serial communication with hardware.
+       - pynmea2: A library for parsing NMEA data from the GPS module.
+---------------------------------------------------------------------------------------       
+       
+Python Script
+-------------
+
+Purpose:
+- The Python script is designed to continuously read GPS data from the NEP 6M GPS module, store this data in a CSV file, and generate an interactive map to visualize the GPS coordinates.
+
+Code Explanation:
+import folium
+import csv
+import serial
+import pynmea2
+
+while True:
+    # Open a connection to the GPS module
+    port = "/dev/ttyAMA0"
+    ser = serial.Serial(port, baudrate=9600, timeout=0.5)
+    dataout = pynmea2.NMEAStreamReader()
+
+    try:
+        while True:
+            newdata = ser.readline()
+
+            # Check if the data is a valid GPRMC message
+            if newdata[0:6] == b'$GPRMC':
+                newmsg = pynmea2.parse(newdata.decode('utf-8'))
+                lat = newmsg.latitude
+                lng = newmsg.longitude
+                gps = f"Latitude={lat} and Longitude={lng}"
+                print(gps)
+                break  # Exit the inner loop after the first valid GPS data
+
+    except KeyboardInterrupt:
+        ser.close()
+
+    # Data to append to the CSV file
+    data_to_append = [lat, lng]
+
+    # CSV file to append to
+    csv_file = "gps_readings.csv"
+
+    # Open the CSV file in append mode and write the data
+    with open(csv_file, mode='a', newline='\n') as file:
+        writer = csv.writer(file)
+        writer.writerow(data_to_append)
+
+    # Create a map centered around the first GPS reading
+    m = folium.Map(location=[lat, lng], zoom_start=15)
+
+    # Add markers for each GPS reading
+    with open(csv_file, mode='r') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip the header row
+        for row in reader:
+            latitude, longitude = map(float, row)
+            folium.Marker(location=[latitude, longitude]).add_to(m)
+
+    # Add a line connecting the GPS readings
+    with open(csv_file, mode='r') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip the header row
+        coordinates = [(float(row[0]), float(row[1])) for row in reader]
+        folium.PolyLine(locations=coordinates, color='blue').add_to(m)
+
+    # Save the map to an HTML file
+    m.save('gps_map.html')
+
+How the Script Works:
+    1. The script establishes a serial connection with the GPS module.
+    2. It continuously reads incoming data and checks if it is a valid GPRMC message.
+    3. Upon receiving a valid message, the latitude and longitude are extracted and printed to the console.
+    4. The latitude and longitude are appended to a CSV file named gps_readings.csv.
+    5. An interactive map is created using folium, centered around the first GPS reading.
+    6. Markers are added to the map for each GPS reading stored in the CSV file.
+    6. A line is drawn to connect the GPS readings, creating a route on the map.
+    7. The map is saved to an HTML file named gps_map.html.
+---------------------------------------------------------------------------------------
+
+CSV File
+--------
+
+Purpose:
+- The CSV file, named gps_readings.csv, serves as a data repository for storing latitude and longitude coordinates received from the GPS module. It allows for the historical tracking of GPS data and is used to generate the map.
+
+CSV Format:
+- The CSV file contains two columns: "Latitude" and "Longitude." Each row corresponds to a set of GPS coordinates received from the GPS module.
+
+Sample CSV data:
+Latitude,Longitude
+30.566,32.6666
+30.544,32.5
+30.533,32.49
+---------------------------------------------------------------------------------------
+
+Interactive Map (gps_map.html)
+------------------------------
+
+Purpose:
+- The generated interactive map, named gps_map.html, provides a visual representation of the GPS coordinates on a map. It allows you to see the current location as well as the historical route taken.
+---------------------------------------------------------------------------------------
+
+Features:
+   - The map is centered around the first GPS reading.
+   - Markers on the map indicate specific GPS coordinates.
+   - A route line connects the GPS readings, showing the path taken.
+
+Usage:
+- You can open the gps_map.html file in a web browser to view the interactive map.
+---------------------------------------------------------------------------------------
+
+Conclusion
+----------
+
+- This documentation explains how the Python script reads data from the NEP 6M GPS module, stores it in a CSV file, and generates an interactive map for tracking GPS coordinates. The combination of hardware, software, and data storage allows you to monitor the movement of the GPS module and visualize its location history.
+---------------------------------------------------------------------------------------
+

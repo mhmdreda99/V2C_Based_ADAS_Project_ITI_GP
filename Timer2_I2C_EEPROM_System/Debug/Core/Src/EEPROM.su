@@ -1,0 +1,6 @@
+../Core/Src/EEPROM.c:22:10:bytestowrite	16	static
+../Core/Src/EEPROM.c:34:6:EEPROM_Write	64	static,ignoring_inline_asm
+../Core/Src/EEPROM.c:70:6:EEPROM_Write_NUM	16	static
+../Core/Src/EEPROM.c:84:7:EEPROM_Read_NUM	24	static
+../Core/Src/EEPROM.c:99:6:EEPROM_Read	64	static
+../Core/Src/EEPROM.c:125:6:EEPROM_PageErase	56	static

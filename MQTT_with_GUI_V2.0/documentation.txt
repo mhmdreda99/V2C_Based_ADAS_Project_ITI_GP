@@ -1,0 +1,36 @@
+--> To run the publisher code automatically on a Raspberry Pi upon reboot or power-on, you can use a variety of methods, including using systemd services or crontab.
+ Here's how you can achieve this using crontab
+ 
+ 1- Open the root user's crontab configuration for editing:
+	sudo crontab -e
+
+2- Add the following line at the end of the crontab file. Replace /path/to/publisher_script.py with the actual path to your publisher script:
+	
+	@reboot /usr/bin/python3 /path/to/publisher_script.py &
+
+	Save and exit the text editor --> ctrl s & ctrl x
+	The @reboot directive tells the cron daemon to execute the specified command after the system reboots.
+	The & at the end of the line runs the script in the background.
+	After saving your crontab file, your publisher script should automatically start after the Raspberry Pi reboots. 
+	
+	
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Problems and Solutions
+-------------------------
+
+Problem 1: Timing Issues
+
+						Issue: When running a script manually, you might introduce delays that don't exist when the script runs via a cron job.
+
+						Solution: Ensure that your script doesn't rely on specific timing that isn't guaranteed when running in the background. While manual execution allows for more interactive control, scripts should be designed to function independently of user interaction.
+
+Problem 2: Network Connectivity
+
+						Issue: Some scripts rely on network connectivity, which may not be fully available immediately after booting.
+
+						Solution: To address this issue, it's important to account for network setup delays. You can add a delay at the beginning of your script or in your cron job to allow time for the network to be fully established.
+
+For instance, consider adding a delay of a few seconds (e.g., 30 seconds) to your script to ensure that the Raspberry Pi has sufficient time to establish network connectivity. This delay provides your Raspberry Pi with time to establish network connectivity before running the script. By doing so, you can mitigate issues related to scripts relying on network resources that may not be readily available during boot.
+		  
+----------------------------------------------------------------------------------------------------------------------------------------------

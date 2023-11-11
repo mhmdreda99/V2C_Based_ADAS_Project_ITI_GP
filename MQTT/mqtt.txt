@@ -1,0 +1,112 @@
+what is MQTT?
+-------------
+MQTT, which stands for Message Queuing Telemetry Transport, is a lightweight and efficient messaging protocol designed for low-bandwidth, high-latency, or unreliable networks. It was developed in the late 1990s by IBM and is now an open standard maintained by the OASIS consortium.
+
+MQTT is designed for scenarios where devices or applications need to communicate in a publish-subscribe or message broker architecture. Here are some key characteristics and features of MQTT:
+
+Publish-Subscribe Model: MQTT uses a publish-subscribe messaging pattern. Clients (devices or applications) can publish messages to specific topics, and other clients can subscribe to these topics to receive the messages. This decouples the sender and receiver of messages, allowing for efficient and flexible communication.
+
+Quality of Service (QoS) Levels: MQTT supports different QoS levels, which dictate the message delivery guarantees. There are three QoS levels:
+
+0: At most once delivery (fire and forget).
+1: At least once delivery (guaranteed delivery, but may be duplicated).
+2: Exactly once delivery (guaranteed delivery without duplicates).
+Retained Messages: MQTT allows a broker to retain the last message sent on a specific topic. When a new subscriber joins, it will receive the most recent retained message for that topic.
+
+Last Will and Testament (LWT): Clients can specify a "last will" message that the broker will publish on a specific topic in case the client unexpectedly disconnects. This is useful for monitoring the online/offline status of devices.
+
+Clean Sessions: Clients can establish both clean and persistent sessions with the broker. In a clean session, the broker discards all subscription and message information when the client disconnects. In a persistent session, the broker retains this information for the client.
+
+Small Overhead: MQTT is designed to be lightweight and has a minimal packet overhead, making it suitable for resource-constrained devices and low-bandwidth networks.
+
+Security: MQTT itself does not define security mechanisms, but it can be used in combination with other security protocols or mechanisms, such as TLS/SSL for encryption and authentication.
+
+Wide Adoption: MQTT is widely used in the Internet of Things (IoT) and industrial applications. It is supported by a variety of platforms, libraries, and programming languages, making it easy to integrate into different systems.
+
+MQTT is a versatile protocol that is used in various applications, including home automation, industrial automation, remote monitoring, and more. It's known for its efficiency, scalability, and suitability for IoT and M2M (Machine-to-Machine) communication.
+
+
+hiveMQ
+--------------
+
+HiveMQ is a popular MQTT (Message Queuing Telemetry Transport) broker that is designed to handle and manage MQTT communication in IoT (Internet of Things) and M2M (Machine-to-Machine) applications. As of my last knowledge update in September 2021, here's some information about HiveMQ:
+
+MQTT Broker: HiveMQ serves as an MQTT broker, which means it provides the infrastructure for devices, sensors, and applications to communicate with each other using the MQTT protocol. It supports MQTT version 3.1.1 and MQTT 5.0, offering compatibility with various MQTT clients and devices.
+
+Scalability: HiveMQ is known for its scalability, which is essential for IoT and M2M applications that involve a large number of devices. It is designed to handle high loads and can be clustered to distribute the messaging load across multiple instances for high availability and fault tolerance.
+
+High Performance: HiveMQ is built to deliver high performance with low latency, making it suitable for real-time communication in IoT and other applications where timely data transfer is critical.
+
+Enterprise-Grade Features: HiveMQ offers a range of enterprise-grade features, including support for different quality of service (QoS) levels, support for retained messages, Last Will and Testament (LWT) functionality, and fine-grained access control and authentication mechanisms.
+
+MQTT 5.0 Support: HiveMQ supports the MQTT 5.0 protocol, which brings enhancements over MQTT 3.1.1, such as improved error handling, better support for bi-directional communication, and additional features like shared subscriptions.
+
+Integration and Extensibility: HiveMQ provides various extension points, enabling developers to extend and customize its functionality. This allows you to integrate HiveMQ into your existing systems and adapt it to your specific needs.
+
+Management and Monitoring: HiveMQ offers management and monitoring capabilities to help administrators keep track of the MQTT broker's health and performance. This includes features like real-time monitoring, logging, and troubleshooting tools.
+
+Security: HiveMQ supports various security features, including Transport Layer Security (TLS) for encrypted communication, and access control mechanisms to ensure that only authorized clients can connect to the broker.
+
+Cloud and On-Premises Deployment: HiveMQ can be deployed in both cloud environments and on-premises data centers, providing flexibility in terms of where you choose to run your MQTT broker.
+
+Community and Support: HiveMQ has an active community, and you can find resources, documentation, and support to help you set up and manage your MQTT-based communication infrastructure.
+
+Please note that since my knowledge is based on information available up to September 2021, there may have been developments or changes in HiveMQ's features and capabilities since that time. I recommend visiting HiveMQ's official website or documentation for the most up-to-date information about their product.
+
+
+
+
+
+MQTT between two Raspberry Pis using hiveMQ server 
+--------------------------------------------------
+
+- Set up the HiveMQ server. You can use HiveMQ Cloud or install HiveMQ Community Edition on a separate server.
+- Install the MQTT client and publisher libraries on the Raspberry Pis. You can use the Paho MQTT client library for Python or another programming language.
+- Write a Python script for the publisher. The script should connect to the HiveMQ server and publish messages to a topic. For example, the following script publishes the message "Hello, world!" to the topic my-topic:
+Python
+import paho.mqtt.client as mqtt
+
+# Create a MQTT client object
+client = mqtt.Client()
+
+# Connect to the HiveMQ server
+client.connect("localhost", 1883)
+
+# Publish a message to the topic "my-topic"
+client.publish("my-topic", "Hello, world!")
+
+# Disconnect from the HiveMQ server
+client.disconnect()
+-------------------------------------------------------------
+Write a Python script for the client. The script should connect to the HiveMQ server and subscribe to the topic that the publisher is publishing to. For example, the following script subscribes to the topic my-topic and prints any messages that are received:
+Python
+import paho.mqtt.client as mqtt
+
+# Create a MQTT client object
+client = mqtt.Client()
+
+# Connect to the HiveMQ server
+client.connect("localhost", 1883)
+
+# Subscribe to the topic "my-topic"
+client.subscribe("my-topic")
+
+# Define a callback function that will be called when a message is received
+def on_message(client, userdata, msg):
+    print(msg.topic, ":", msg.payload)
+
+# Set the callback function
+client.on_message = on_message
+
+# Start a loop to listen for messages
+client.loop_forever()
+---------------------------------------------------------------
+Run the publisher script on one Raspberry Pi and the client script on the other Raspberry Pi.
+
+Type a message in the publisher script and press Enter. The message will be published to the HiveMQ server.
+
+On the client Raspberry Pi, you should see the message printed to the console.
+
+Once you have this basic working example, you can modify the scripts to implement your own document writing application. For example, you could have the publisher script read the contents of a file and publish each line as a separate message. The client script could then subscribe to the topic and write the received messages to a new file.
+
+You could also use MQTT to implement more complex features, such as real-time collaboration between multiple users or support for multiple documents.
