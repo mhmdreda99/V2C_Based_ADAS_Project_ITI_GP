@@ -1,0 +1,58 @@
+In server stockolm
+Thing name --> V2C_RPI
+Rule name --> RaspberryPiRule
+Dynamodb Table --> raspiData_v2
+Lambda Functoion --> Lambda_DynamoIot
+
+
+1-Creat AWS thing --> This step is done and details below:-
+			1-Create a thing from AWS core
+			2-Generate Certificate - private key - public key - CA root
+			3-Create a policy
+			4-Attach Generated certificate to the thing and policy
+			5-Wrtie a code and connect by MQTT through this cridentials
+			By this way we already generated a thing and we can send and receive data through a broker.
+			But this data is not stored so to store this data we need database -> Next step we need to create Dynamodb
+			
+ -- To create this dynamodb we need a lambda function, This func triggered by the thing and invoke data into dynamodb
+ So we need to make a Lambda Rule 
+ 
+ 2-Create Lambda rule --> This step is done and details below :-
+ 			  1-Enter Rules and create a new rule and give it a name
+ 			  2-write SQL statment --> In this u write what rule will take from the broker
+ 			  3-Choose action --> In our case action is Lambda func
+ 			  4-create a new Lambda Func , in this func:-
+ 			  				1-Choose run time language
+ 			  				2-Make IAM Role to this Lambda func. to give access mangment to this Lambda by:-
+ 			  				2-1- Create an IAM Role for Lambda:"Select type of trusted entity" section, select "AWS service," and in the "Use case" section, choose "Lambda."
+ 			  				2-2-Attach Policy Permissions:1-AmazonDynamoDBFullAccess policy:- to give Lambda function access to DynamoDB, 
+ 			  							      2-AWSIoTDataAccess policy:-to make Lmabda interact with IOT core,This policy allows the Lambda function to publish and receive messages from IoT Core.
+                          5-After creating it go back to our RUle in IOT and choose created Lambda 
+                          6-create rule.
+                          8-Go back to Lambda and write code for the trigger -IOT thing- :-
+                          import boto3
+---------------------------------------------
+import json
+
+def lambda_handler(event, context):
+    client = boto3.client('dynamodb')
+    response = client.put_item(
+        TableName = 'raspiData_v2',
+        Item = {
+            'Temperature':{'N': str(event['Temperature'])},
+            'FuelLevel':{'N': str(event['FuelLevel'])},
+            'Elapsedtime':{'N': str(event['Elapsedtime'])},
+            'BSA_state': {'S': event['BSA_state']}
+        }
+    )
+    return 0
+___________________________________________________________                   
+-- By these steps we already Created -> A thing - A rule for this thing which is Lambda - a Lambda function
+
+3- Create Dynamodb Table--> This step is done and details below:-
+			  1-Create a table and give it a name and choose partition key and sort key 
+			  2-Attach table name to Lambda function 
+			  
+-- By these steps we Created a Database in AWS cloud and this database is NoSQL and you can send and receive data to this table through your thing.
+---> Next Step:-
+Import data from Dynamodb table and make a dashboard.
