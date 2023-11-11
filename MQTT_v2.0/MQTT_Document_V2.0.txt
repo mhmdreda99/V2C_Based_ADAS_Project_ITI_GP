@@ -1,0 +1,30 @@
+MQTT protocol version 
+----------------------
+1- MQTT 3.1
+2- MQTT 3.1.1
+3- MQTT 5.0
+
+--> IN THE PROJECT WE USE --> MQTT 5.0
+
+--> Why ---> MQTTv5 is the latest major version of the protocol, and it brings several
+			 enhancements and additional features over MQTT 3.1.1. Some key features
+			 and improvements of MQTTv5 include:
+			 
+			 # User Properties: You can attach user-defined properties to MQTT packets, providing more extensibility and context to messages.
+			 # Request/Response Model: MQTTv5 supports a request/response pattern, allowing clients to send requests and receive responses from the broker.
+			 # Enhanced Authentication: Improved authentication mechanisms are available, including token-based authentication.
+			 # Error Handling: MQTTv5 offers more detailed error reporting and handling capabilities.
+			 # Session Expiry: You can set a session expiry interval for connections, allowing for more precise control over session persistence. 
+			 
+			 
+-------------------------------------------------------------------------------------
+
+why the message_id started its value from 2 and then increament 
+
+The message identifier (Message_ID) is a value used to uniquely identify messages within the MQTT protocol. When you publish a message, the broker assigns a Message_ID to that message, and it starts from an arbitrary number (usually 1) or another number set by the broker.
+
+In your case, the broker assigned the Message_IDs starting from 2, and they increment with each new message that you publish. This behavior is determined by the broker's implementation and configuration. MQTT brokers typically manage the Message_IDs for messages that are published by clients.
+
+The incrementing Message_IDs are a way for the MQTT broker and client to keep track of individual messages. This can be useful for ensuring message delivery, tracking acknowledgments, and handling message ordering. The specific starting value and incrementing behavior can vary between different MQTT broker implementations.
+
+In your client code, you can see these Message_IDs being printed as a way to identify the published messages and link them to acknowledgments or other aspects of message handling.
