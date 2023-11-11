@@ -13,6 +13,7 @@ The V2C ADAS Nexus project aims to create a cutting-edge embedded system that se
   - [Table of Contents](#table-of-contents)
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
+    - [Configuration](#configuration)
     - [Installation](#installation)
     - [To-Do](#to-do)
     - [Running the Project](#running-the-project)
@@ -32,8 +33,21 @@ Ensure you have the following installed:
 
 - [Raspberry Pi](https://www.raspberrypi.org/) with Raspbian OS
 - [STM32 IDE](https://www.st.com/en/development-tools/stm32cubeide.html)
-- [Python](https://www.python.org/) (Version X.X or higher)
+- [Python](https://www.python.org/) (latest version)
+-  [PHP] (Version 7.4)
+-  [XMPP_Server] (e.g., ejabberd, Prosody)
+-  [AWS SDK for PHP](https://github.com/aws/aws-sdk-php) (Version 3)
+-  AWS account with S3 bucket configured
 
+
+### Configuration
+```bash
+; Example configuration in a .env file
+AWS_ACCESS_KEY_ID=your_access_key
+AWS_SECRET_ACCESS_KEY=your_secret_key
+AWS_DEFAULT_REGION=your_region
+AWS_BUCKET_NAME=your_bucket_name
+```
 
 ### Installation
 
@@ -60,6 +74,8 @@ Before running the project, make sure to complete the following to-do items:
 - Configure the Raspberry Pi with necessary dependencies.
 - Connect and configure the STM32 board.
 - Any additional project-specific steps.
+
+Project Structure
 
 ### Running the Project
 
