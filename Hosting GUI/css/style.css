@@ -39,7 +39,7 @@ body,html{
     display:flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+    padding: 30px 25px;
 }
 .SDataCont>img{
     background-color:#4d4cac;
@@ -52,18 +52,19 @@ body,html{
     padding:14px;
     margin-right: 14px;
 }
-.SDataCont:nth-child(3)>img{
-    background-color: #9698d6;
-}
 .SDataCont:nth-child(2)>img{
     background-color: #ff808b;
 }
 .SDataCont:nth-child(4)>img{
+    background-color: #797cc4/*#9698d6*/;
+}
+
+.SDataCont:nth-child(3)>img{
     background-color: #5e81f4;
 }
 
 .SDataCont>div>p{
-    font-size: 28px;
+    font-size: 25px/*28px*/;
     font-weight: 800;
     line-height: 30px;
 }
