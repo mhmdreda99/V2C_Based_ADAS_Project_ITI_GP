@@ -1,0 +1,76 @@
+Voice Recognition System Using Raspberry Pi and STM32F401CC
+-------------------------------------------------------------
+Motivation: This documentation aims to provide a comprehensive guide to
+building a Voice Recognition System using Raspberry Pi and STM32F401CC.
+The project's motivation is to create an affordable and versatile voicecontrolled system for various applications.
+Problem Statement: Many individuals and organizations are seeking costeffective voice recognition solutions for improve ADAS systems,
+accessibility, and other applications. This project addresses the need
+for an open-source, DIY voice recognition system.
+System Overview: The Voice Recognition System utilizes the Raspberry Pi
+as the core processing unit and STM32F401CC as a microcontroller for
+interfacing with peripherals. It can recognize and execute voice commands
+to control various devices and applications.
+-------------------------------------------------------------
+Hardware Requirements:
+1- Raspberry Pi
+2- STM32F401CC Microcontroller
+3- USB Microphones
+4- SD card
+5- Jumper wires
+6- Power Adapter
+-------------------------------------------------------------
+Hardware Connections:
+1- Raspberry Pi GPIO to STM32F401CC GPIO connections over SPI
+2- Microphone connections to Raspberry Pi USB ports
+3- Speaker connection to Raspberry Pi audio output
+4- Power supply connections
+Power Supply: The system is powered by a 5V/2A power adapter connected to
+the Raspberry Pi's micro USB port. Ensure a stable power supply to avoid
+system instability.
+-------------------------------------------------------------
+Software Setup
+Operating System: The Raspberry Pi runs Raspbian OS. Detailed
+instructions on downloading, installing, and configuring the OS are
+available on the Raspberry Pi Foundation's official website.
+Programming Languages and Tools:
+1- Python for Raspberry Pi
+2- C for STM32F401CC
+Voice Recognition AlgorithmVoice Recognition Algorithm: The system employs a combination of keyword
+spotting and machine learning-based speech recognition. It uses a pretrained neural network model to detect specific keywords and phrases.
+Code Implementation
+Code Structure: The project's code is organized into three main
+components: Raspberry Pi application, STM32F401CC firmware, and a voice
+recognition library. Each component handles specific tasks.
+Code Walkthrough: In the Raspberry Pi application, the code captures
+audio input, processes it, and sends recognized commands to the
+STM32F401CC. The STM32F401CC firmware interfaces with peripherals and
+executes commands
+-------------------------------------------------------------
+Testing
+Testing Procedure: To test the system, connect the hardware as described,
+record voice commands, and verify that the system correctly identifies
+and executes the commands. A list of sample commands and expected
+outcomes is provided in the documentation.
+-------------------------------------------------------------
+Usage Instructions
+Step-by-Step Instructions:
+1- Assemble hardware components as per the Hardware Setup section.
+2- Install the required software and libraries (import GOOGLE speech
+recognition)
+3- Configure the system with your desired voice commands.
+4- Run the system, and it's ready to accept voice commands.
+-------------------------------------------------------------
+Troubleshooting
+Common Issues:
+1- Server down
+2- Unresponsive voice commands
+3- Power-related issues
+4- UART starvation problem make corruption in data transfer, so replaced UART with SPI
+-------------------------------------------------------------
+Conclusion: This documentation provides a comprehensive guide to building
+a Voice Recognition System using Raspberry Pi and STM32F401CC. By
+following the steps outlined here, users can create a versatile and costeffective voice-controlled system for various applications.
+Future Improvements: Future enhancements may include multi-language
+support, advanced machine learning models, and integration with cloud
+services.
+-------------------------------------------------------------
