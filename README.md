@@ -17,7 +17,10 @@ The V2C ADAS Nexus project aims to create a cutting-edge embedded system that se
     - [Installation](#installation)
     - [To-Do](#to-do)
     - [Project Structure](#project-structure)
-    - [Running the Project](#running-the-project)
+  - [Running the Project](#running-the-project)
+    - [STM32 Board](#stm32-board)
+    - [Raspberry Pi Components](#raspberry-pi-components)
+    - [Dashboard Access](#dashboard-access)
   - [Branches](#branches)
   - [Authors](#authors)
   - [License](#license)
@@ -144,11 +147,27 @@ Before running the project, make sure to complete the following to-do items:
 - Test_suit.xlsx           # Test suite or unit & integration test-related documents
 
 ```
-### Running the Project
 
-Follow the instructions in your STM32 IDE documentation to build and upload the firmware to the STM32 board.
 
-For Raspberry Pi components, execute the necessary Python scripts or commands.
+## Running the Project
+
+### STM32 Board
+
+1. Follow the instructions in your STM32 IDE documentation to build and upload the firmware to the STM32 board.
+
+### Raspberry Pi Components
+
+1. Execute the necessary Python scripts or commands on the Raspberry Pi. These scripts might be related to data transfer or any other functionality used in your project.
+
+### Dashboard Access
+
+Visit the [Dashboard](https://nexus.mhmdreda99.com/).
+
+- **Login Credentials:**
+  - Username: ITI username
+  - Password: 123 password
+
+Make sure to meet all prerequisites and ensure that the STM32 board and Raspberry Pi components are correctly connected and configured before running the project.
 
 ## Branches
 
