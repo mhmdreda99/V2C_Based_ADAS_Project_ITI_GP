@@ -92,18 +92,53 @@ Before running the project, make sure to complete the following to-do items:
   - v4.0                   # Version 4.0 of the Blind Spot Assistant
   - v5.0                   # Version 5.0 of the Blind Spot Assistant (Accepted)
     - v3.0                 # Subversion for version 3.0 (Accepted )
-- Docs                     # General project documentation
 - GPS                      # GPS-related code or configuration
 - HostingGUI               # Code related to hosting a graphical user interface (NEXUS Website https://nexus.mhmdreda99.com/)
+ - css
+    - style.css               # CSS stylesheets
+  - img
+    - BG.svg
+    - ITINexus.svg
+    - ITINexusWhite.svg
+    - User.svg
+    - clock-8701712-7097715.webp
+    - cloudy-weather-3311758-2754892.png
+    - fuel-can-5019532-4185548.png
+    - lock.svg
+    - motion-sensor-4035927-3342606.webp
+    - route-destination-5480363-4569725.png
+    - scroll-map-8616025-6815679.png
+  - js
+    - maps.js                 # JavaScript files
+    - mapsBackup.js
+    - script.js
+  - vendor                    # Composer dependencies
+    - aws
+    - bin
+    - composer
+    - guzzlehttp
+    - mtdowling
+      - jmespath.php
+    - psr
+    - ralouphie
+      - getallheaders
+    - symfony
+  - autoload.php              # Composer autoload file
+  - DataFetch.php             # PHP script for data fetching
+- ITI_Nexus_Code_11_11_2023_4AM.zip   # Archive file containing code (dated 11.11.2023 4 AM)
+- ITI_Nexus_Code_12_11_2023_2AM.zip   # Archive file containing code (dated 12.11.2023 2 AM)
+- composer.json              # Composer dependencies file
+- composer.lock              # Composer lock file
+- index.html                 # HTML file for the main page
+- index.php                  # PHP file for server-side logic
+- login.php                  # PHP file for handling login functionality
 - MQTT                     # MQTT-related code or configuration
   - v2.0                   # Version 2.0 of the MQTT code
   - with_GUI               # MQTT code with a graphical user interface
     - v2.0                 # Version 2.0 of MQTT with GUI
-- MiniTasks                # Smaller tasks or utilities
 - gateway                  # Gateway-related code or configuration
   - gateWay_Assis_UART_WAS.py #  reads data from a UART (Universal Asynchronous Receiver-Transmitter) connection, processes the data, reads GPS coordinates from files, and publishes the processed data to AWS IoT (Internet of Things) using MQTT (Message Queuing Telemetry Transport). The script also listens for commands from a web service 
 - spi_task                 # SPI-related code or configuration for communtcation between componenets (rejected )
-- timeline                 # Project timeline or milestones
 - LICENSE                  # Project license file
 - README.md                # Project README file
 - Test_suit.xlsx           # Test suite or unit & integration test-related documents
