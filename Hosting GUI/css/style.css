@@ -101,3 +101,652 @@ body,html{
     top: 0.0%;
 }
 .leaflet-container { font-size: 1rem; }
+
+
+
+@media only screen and (max-width: 600px) {
+    .Logo {
+        width:100%;
+        height: 62px;
+        padding: 0 0 10px;
+    }
+    .DataContainer{
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+    .SDataCont {
+        padding: 10px 5px;width:50%;justify-content: flex-start;
+    }
+    .SDataCont>img {
+        height: 50px;
+        width: 50px;
+        -moz-border-radius: 6px;
+        -khtml-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        padding: 6px;
+        margin-right: 9px;
+    }
+    .SDataCont>div>p {
+        font-size: 17px;
+        font-weight: 800;
+        line-height: 18px;
+    }
+    .SDataCont>div>p+p {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 18px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+    .Logo {
+        width:100%;
+        height: 80px;
+        padding: 0 0 20px;
+    }
+    .DataContainer{
+        width:100%;
+        flex-wrap: wrap;
+        padding: 30px 0;
+    }
+    .SDataCont {
+        padding: 10px 5px;width:50%;justify-content: flex-start;
+    }
+    .SDataCont>img {
+        height: 70px;
+        width: 70px;
+        -moz-border-radius: 6px;
+        -khtml-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        padding: 8px;
+        margin-right: 18px;
+    }
+    .SDataCont>div>p {
+        font-size: 28px;
+        font-weight: 800;
+        line-height: 37px;
+    }
+    .SDataCont>div>p+p {
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+}
+
+
+@media only screen and (min-width: 1200px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+html,body{
+    height: 100%;width: 100%;max-width: 100%;margin: 0;padding: 0;background-color: #e9e9ea;
+}
+body.HideScroll{
+    overflow-y: hidden;
+}
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+.hidden{
+    display: none !important;
+}
+.Invisible{
+    visibility: hidden !important;
+}
+.FullWidth{
+    width: 100%;
+}
+.MT40{
+    margin-top: 40px !important
+}
+.MT30{
+    margin-top: 30px !important
+}
+
+.MT20{
+    margin-top: 20px !important
+}
+
+.MT10{
+    margin-top: 10px !important
+}
+.MB40{
+    margin-bottom: 40px !important
+}
+.MB30{
+    margin-bottom: 30px !important
+}
+
+.MB20{
+    margin-bottom: 20px !important
+}
+
+.MB10{
+    margin-bottom: 10px !important
+}
+.TxtLeft{
+    width: 100%;
+    text-align: left;
+}
+.TxtCenter{
+    width: 100%;
+    text-align: center;
+}
+.TxtRight{
+    width: 100%;
+    text-align: right;
+}
+.XLTitle{
+    font-size: 34px;
+}
+.LMTitle{
+    font-size: 30px;
+}
+.LTitle{
+    font-size: 24px;
+}
+.MTitle{
+    font-size: 20px;
+}
+.STitle{
+    font-size: 16px;
+}
+.XSTitle{
+    font-size: 14px;
+}
+.FontW400{
+    font-weight:400;
+}
+.FontW500{
+    font-weight:500;
+}
+.FontW600{
+    font-weight:600;
+}
+.FontW700{
+    font-weight:700;
+}
+.BrandLoginIcon{
+    padding: 0 0 35px 0;
+    width:200px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .BrandLogoCont{
+        padding: 22px 2px !important;
+    }
+    .Container{
+        width:100%;
+    }
+    .NavProfileDataCont .NavSettingsBtn{
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .Container{
+        max-width:560px;
+    }
+    .NavProfileDataCont .NavSettingsBtn{
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .Container{
+        max-width:768px;
+    }
+    .NavProfileDataCont .NavSettingsBtn{
+        display: flex !important;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .Container{
+        max-width:960px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .Container{
+        max-width:1140px;
+    }
+}
+
+
+
+
+.PopUpWidow{
+    width: 100%;
+    height: 100%;
+    background-color: #000000ab;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 10000000000000000;
+
+    display: flex;
+    
+
+    -moz-backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+.BrandBtn.CancelApprovalMenu{
+    background-color:#a6b3cf;
+    color:black;
+    margin:0 5px 0 0;
+    font-weight: 500;
+}
+
+.BrandBtn.CancelApprovalMenu:hover{
+    background-color:#8595b7
+}
+
+.WhiteMenuCont{
+    width: 90%;
+    max-width: 450px;
+    max-height:80%;
+    overflow-y:auto;
+    -moz-border-radius:15px;
+    -khtml-border-radius:15px;
+    -webkit-border-radius: 15px;    
+    border-radius: 15px;
+    background-color: white;
+
+    padding: 25px;
+    margin:auto;
+    position: relative;
+}
+
+.CloseBGLayer,.PopUpOverlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    cursor:pointer;
+}
+
+.WhiteMenuCont h3{
+    width: 100%;
+    padding: 0 55px 0 0;
+    line-height: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/************************* Login ******************************************/
+.DangerAlert,.PrimaryAlert,.SuccessAlert{
+    position: relative;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 15px;font-weight:500;
+}
+
+
+
+
+.DangerAlert {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.PrimaryAlert {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+.SuccessAlert {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+
+
+.LoginHero{
+    height: 100vh;
+    min-height: 600px;
+    width:100%;
+    padding: 0;
+    position: relative;
+}
+
+.LoginHero.RegisterHero{
+    min-height: 670px;
+}
+
+.LoginHero >.Overlay{
+    top:0;
+    left:0;
+    
+    -moz-backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    background-color: #00000075/*#00000050*/;
+}
+
+.BackgroundContainer{
+
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/BG.svg');
+    background-size: cover;
+    background-position:right 100%;
+    position: relative;
+    /*-moz-border-radius:13px;
+    -khtml-border-radius:13px;
+    -webkit-border-radius: 13px;    
+    border-radius: 13px;*/
+    overflow: hidden;
+    -webkit-box-shadow: 0px 0px 63px -5px rgb(0 0 0 / 55%);
+    -moz-box-shadow: 0px 0px 63px -5px rgba(0,0,0,0.55);
+    box-shadow: 0px 0px 63px -5px rgb(0 0 0 / 55%);
+
+
+
+    display: flex;
+}
+
+
+.Overlay{
+    position: absolute;
+    height: 100%;
+    width:100%;
+    background-color: #171717ed/*#00000080*/;
+}
+
+
+.BrandBtn{
+    padding:13px 55px;
+    background-color: #eb0023/*#284d9e*/;
+    color: white;
+    font-size:13px;
+    cursor: pointer;
+    outline: none;
+    border:none;
+
+    -moz-border-radius:8px;
+    -khtml-border-radius:8px;
+    -webkit-border-radius: 8px;    
+    border-radius: 8px;
+
+    -webkit-box-shadow: 0px 0px 63px -5px rgb(0 0 0 / 23%);
+    -moz-box-shadow: 0px 0px 63px -5px rgba(0,0,0,0.23);
+    box-shadow: 0px 0px 63px -5px rgb(0 0 0 / 23%);
+}
+.BrandBtn:hover{
+    background-color: #b3000f/*#1f3f85*/;
+}
+.BrandBtn.Dark{
+    background-color: #2e2e2e;
+}
+.BrandBtn.Dark:hover{
+    background-color: #111111;
+}
+.LoginHero .FormContainer{          
+    /*height: 100%;*/
+    width: 350px;
+    padding:40px 20px;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+    position: relative;
+    z-index: 9;
+    color: white;
+    margin: auto 0;
+    margin-left: 20%;
+    margin-left: calc(25% - 150px);
+}
+form{
+    width:100%;
+}
+.InputCont{
+    width: 100%;
+    position: relative;
+    top: 0;left: 0;
+    margin-top:20px;
+}
+.FormContainer .BrandBtn{
+    width: 100%;
+}
+
+.InputCont input{
+    
+    padding:10px;
+    padding-left:35px;
+    outline: none;
+    border:none;
+    color: white;
+
+    background-color: transparent;
+
+    border-bottom:2px solid white;
+    width: 100%;
+    position: relative;
+    top:0;
+    left:0;
+}
+
+
+.InputCont input::-webkit-input-placeholder {
+    color: #e7e7e7;
+}
+.InputCont input::-moz-placeholder {
+    color: #e7e7e7;
+}
+.InputCont input:-ms-input-placeholder {
+    color: #e7e7e7;
+}
+.InputCont input:-moz-placeholder {
+    color: #e7e7e7;
+}
+.InputCont input::placeholder {
+    color: #e7e7e7;
+}
+
+
+
+
+
+.InputCont input + img,.select-selected>img {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top:9px;left:5px;
+    display: block;
+
+    -khtml-opacity:.70; 
+    -moz-opacity:.70; 
+    -ms-filter:"alpha(opacity=70)";
+    filter:alpha(opacity=70);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.70);
+    opacity:.70;
+}
+.InputCont input:focus + img {
+    -khtml-opacity:1; 
+    -moz-opacity:1; 
+    -ms-filter:"alpha(opacity=100)";
+    filter:alpha(opacity=100);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=1);
+    opacity:1;
+}
+
+
+#PasswordInput{
+    padding-right: 34px;
+}
+.PasswordRevealBtn{
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top:9px;
+    right: 5px;
+    -khtml-opacity:.70; 
+    -moz-opacity:.70; 
+    -ms-filter:"alpha(opacity=70)";
+    filter:alpha(opacity=70);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.70);
+    opacity:.70;
+}
+
+.Separator{
+
+    margin: 25px 0 10px;
+    width: 100%;
+    height: 2px;
+    background-color: #FFFFFF30;
+}
+
+.SignInUpLinkCont{
+    text-align: right;
+}
+
+.SignInUpLinkCont a,.SignInUpLinkCont p{
+    display: inline-block;
+    font-size: 14px;
+    margin: 0;padding: 0;
+}
+.SignInUpLinkCont a{
+    text-decoration: underline;
+    margin-left: 10px;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .LoginHero .FormContainer{
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        padding: 0 40px
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .LoginHero .FormContainer{
+        margin-left: 40%;
+        margin-left: calc(40% - 150px);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .LoginHero .FormContainer{
+        margin-left: 20%;
+        margin-left: calc(25% - 150px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#LoadingMenu{
+    top:0;left:0;
+    height:100%;
+    width:100%;z-index:999999999999999999999999;
+    position:fixed;
+    
+    display:flex;justify-content:center;
+    align-items:center;
+    background-color: #000000ba;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.WhiteBgContainer{
+    padding:10px;
+    background-color:white;
+    border-radius:20px;
+    
+    -webkit-box-shadow: 0px 0px 55px -7px rgb(0 0 0 / 33%);
+    -moz-box-shadow: 0px 0px 55px -7px rgba(0,0,0,0.33);
+    box-shadow: 0 0px 55px -7px rgb(0 0 0 / 33%);
+}
+.WhiteBgContainer svg{
+    width:100px;height:100px;
+}
+
+
+.WhiteBgContainer svg path{
+    fill:#424242;
+}
