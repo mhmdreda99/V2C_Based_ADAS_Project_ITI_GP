@@ -16,6 +16,7 @@ The V2C ADAS Nexus project aims to create a cutting-edge embedded system that se
     - [Configuration](#configuration)
     - [Installation](#installation)
     - [To-Do](#to-do)
+    - [Project Structure](#project-structure)
     - [Running the Project](#running-the-project)
   - [Branches](#branches)
   - [Authors](#authors)
@@ -75,8 +76,39 @@ Before running the project, make sure to complete the following to-do items:
 - Connect and configure the STM32 board.
 - Any additional project-specific steps.
 
-Project Structure
+### Project Structure
+```bash
+- .vscode                  # Visual Studio Code settings
+- AWS_v1 
+  - datatransfer.py              -- Python script for data transfer
+  - datatransfer_PC.py           -- Python script for data transfer on a PC                  # AWS-related code or configuration (e.g., Lambda functions)
+  - dataReceive_PC.py              -- Python script for data receiving on a PC
+ - dataReceive.py                 -- Modified version of dataReceive.py
 
+- BlindSpotAssistant       # Main folder for the Blind Spot Assistant feature
+  - v1.0                   # Version 1.0 of the Blind Spot Assistant
+  - v2.0                   # Version 2.0 of the Blind Spot Assistant
+  - v3.0                   # Version 3.0 of the Blind Spot Assistant
+  - v4.0                   # Version 4.0 of the Blind Spot Assistant
+  - v5.0                   # Version 5.0 of the Blind Spot Assistant (Accepted)
+    - v3.0                 # Subversion for version 3.0 (Accepted )
+- Docs                     # General project documentation
+- GPS                      # GPS-related code or configuration
+- HostingGUI               # Code related to hosting a graphical user interface (NEXUS Website https://nexus.mhmdreda99.com/)
+- MQTT                     # MQTT-related code or configuration
+  - v2.0                   # Version 2.0 of the MQTT code
+  - with_GUI               # MQTT code with a graphical user interface
+    - v2.0                 # Version 2.0 of MQTT with GUI
+- MiniTasks                # Smaller tasks or utilities
+- gateway                  # Gateway-related code or configuration
+  - gateWay_Assis_UART_WAS.py #  reads data from a UART (Universal Asynchronous Receiver-Transmitter) connection, processes the data, reads GPS coordinates from files, and publishes the processed data to AWS IoT (Internet of Things) using MQTT (Message Queuing Telemetry Transport). The script also listens for commands from a web service 
+- spi_task                 # SPI-related code or configuration for communtcation between componenets (rejected )
+- timeline                 # Project timeline or milestones
+- LICENSE                  # Project license file
+- README.md                # Project README file
+- Test_suit.xlsx           # Test suite or unit & integration test-related documents
+
+```
 ### Running the Project
 
 Follow the instructions in your STM32 IDE documentation to build and upload the firmware to the STM32 board.
