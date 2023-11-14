@@ -2,6 +2,8 @@ const Temperature = document.getElementById("Temperature");
 const FuelLevel = document.getElementById("FuelLevel");
 const TimeElapsed = document.getElementById("TimeElapsed");
 const BSAStats = document.getElementById("BSAStats");
+const LoadingMenu = document.getElementById("LoadingMenu");
+
 //const DistanceTraveled = document.getElementById("DistanceTraveled");
 var LastIndUsed=0,CoordinatesArr=[],currentData="";
 
@@ -14,7 +16,7 @@ var MapmarkerCount=0,PolyLine= [];
 var LocationMap = L.map("LocationMap",{
     center: [30.566, 32.6666],
     crs: L.CRS.EPSG3857,
-    zoom: 13,
+    zoom: 15,
     zoomControl: true,
     preferCanvas: false,
 });
@@ -153,11 +155,12 @@ function FetchNShowData(){
         }
 
         LastIndUsed = currentData.No;
-        Temperature.innerHTML = currentData.Temperature;
-        FuelLevel.innerHTML = currentData.FuelLevel;
+        Temperature.innerHTML = currentData.Temperature + "°C";
+        FuelLevel.innerHTML = currentData.FuelLevel + "%";
         TimeElapsed.innerHTML = secondsToHms(currentData.Elapsedtime);
-        BSAStats.innerHTML = currentData.BSA_state;
+        BSAStats.innerHTML = (currentData.BSA_state == 3)?"Safe" : "Danger";
         ModifyLocationOnMap(CoordinatesArr);
+        LoadingMenu.classList.add("hidden");
     });
 }
 
@@ -171,9 +174,9 @@ function secondsToHms(d) {
     var m = Math.floor(d % 3600 / 60);
     var s = Math.floor(d % 3600 % 60);
 
-    var hDisplay = h > 0 ? h+":":"";
-    var mDisplay = m > 0 ? m +":" : "";
-    var sDisplay = s > 0 ? s : "00";
+    var hDisplay = h > 0 ? h.toString().padStart(2,"0") +":":"";
+    var mDisplay = m > 0 ? m.toString().padStart(2,"0") +":" : "";
+    var sDisplay = s > 0 ? s.toString().padStart(2,"0") : "00";
     return hDisplay+mDisplay+sDisplay;
 }
 function ModifyLocationOnMap(JSONResp){

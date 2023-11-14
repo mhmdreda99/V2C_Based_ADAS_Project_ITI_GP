@@ -32,7 +32,7 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": false,
+      "externalConsole": true,
       "cwd": ".",
       "program": "build/Debug/outDebug",
       "MIMode": "gdb",
