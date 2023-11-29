@@ -17,7 +17,6 @@ The V2C ADAS Nexus project aims to create a cutting-edge embedded system that se
     - [Installation](#installation)
     - [To-Do](#to-do)
     - [Project Structure](#project-structure)
-  - [Running the Project](#running-the-project)
     - [STM32 Board](#stm32-board)
     - [Raspberry Pi Components](#raspberry-pi-components)
     - [Dashboard Access](#dashboard-access)
@@ -149,7 +148,7 @@ Before running the project, make sure to complete the following to-do items:
 ```
 
 
-## Running the Project
+{## Running the Project
 
 ### STM32 Board
 
@@ -167,7 +166,7 @@ Visit the [Dashboard](https://nexus.mhmdreda99.com/).
   - Username: ITI username
   - Password: 123 password
 
-Make sure to meet all prerequisites and ensure that the STM32 board and Raspberry Pi components are correctly connected and configured before running the project.
+Make sure to meet all prerequisites and ensure that the STM32 board and Raspberry Pi components are correctly connected and configured before running the project.}
 
 ## Branches
 
@@ -193,6 +192,7 @@ Make sure to meet all prerequisites and ensure that the STM32 board and Raspberr
 - Abdel-Hamid Tarek - [Abdel-Hamidd](https://github.com/Abdel-Hamidd)
 - Yasmen Ehab - [YasmenEhab](https://github.com/YasmenEhab)
 -  Mostafa Ibrahim - [MostafaIibrahim](https://github.com/MostafaIibrahim)
+-  Mario Vector [MarioVictor](https://github.com/Mariovictore)
 
 See also the list of [contributors](https://github.com/mhmdreda99/V2C_Based_ADAS_Project_ITI_GP/contributors) who participated in this project.
 
