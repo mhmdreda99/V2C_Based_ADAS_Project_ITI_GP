@@ -1,0 +1,17 @@
+../Core/Src/main.c:190:5:main	1
+../Core/Src/main.c:284:6:SystemClock_Config	3
+../Core/Src/main.c:326:13:MX_ADC1_Init	3
+../Core/Src/main.c:378:13:MX_I2C1_Init	2
+../Core/Src/main.c:412:13:MX_GPIO_Init	1
+../Core/Src/main.c:439:10:GetElapsedTime	1
+../Core/Src/main.c:444:6:EEPROM_voidInitTime	3
+../Core/Src/main.c:464:6:mapDigitalvalueToLeds	6
+../Core/Src/main.c:518:6:getDigitalTemperatureFromADC	1
+../Core/Src/main.c:524:6:mapDigitalTemperatureToVolt	2
+../Core/Src/main.c:528:6:mapMVoltToCelsius	1
+../Core/Src/main.c:542:6:IncTimFunc	1
+../Core/Src/main.c:562:6:EEPROM_saveTimVal	1
+../Core/Src/main.c:582:6:getFuelLevelFromADC	1
+../Core/Src/main.c:605:6:mapFuelLevelDigtalToLED	1
+../Core/Src/main.c:627:6:LM35_getTemprature	1
+../Core/Src/main.c:654:6:Error_Handler	1

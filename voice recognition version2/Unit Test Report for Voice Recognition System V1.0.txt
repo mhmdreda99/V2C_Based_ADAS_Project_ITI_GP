@@ -1,0 +1,100 @@
+                    Unit Test Report for Voice Recognition System
+                   -----------------------------------------------------------
+		
+Test Case 1: Recognize speech
+
+Purpose: To test the recognize_speech() function.
+
+Expected Behavior: The function should recognize the speech input and return the recognized text.
+
+Steps:
+
+1- Simulate speech input.
+2- Call the recognize_speech() function.
+3- Assert that the returned text is equal to the expected text.
+
+Code: 
+-----
+import unittest
+import speech_recognition as sr
+
+class SpeechRecognitionTest(unittest.TestCase):
+
+    def test_recognize_speech(self):
+        r = sr.Recognizer()
+        mic = sr.Microphone()
+
+        # Simulate speech input
+        with mic as source:
+            audio = r.listen(source, timeout=5.0)
+
+            # Recognize the speech input
+            words = r.recognize_google(audio)
+
+            # Assert the expected behavior
+            self.assertEqual(words, "Hello world")
+
+if __name__ == '__main__':
+    unittest.main()
+--------------------------------------------------------------
+Test Case 2: Send SPI command
+
+Purpose: To test the send_spi_command() function.
+
+Expected Behavior: The function should send the SPI command to the AC and motor controller.
+
+Steps:
+
+1- Call the send_spi_command() function with the desired command.
+2- Assert that the command was sent successfully.
+
+import unittest
+import spi_communication as spi
+
+class SPICommunicationTest(unittest.TestCase):
+
+    def test_send_spi_command(self):
+        spi.send_spi_command(0x5)
+
+        # Assert the expected behavior
+        self.assertTrue(spi.is_command_sent())
+
+if __name__ == '__main__':
+    unittest.main()
+--------------------------------------------------------------
+Test Case 3: Handle invalid input
+
+Purpose: To test that the code handles invalid input correctly.
+
+Expected Behavior: The code should print an error message and ignore the invalid input.
+
+Steps:
+
+1- Simulate invalid speech input.
+2- Call the recognize_speech() function.
+3- Assert that the function returns None.
+4- Assert that an error message is printed to the console.
+
+import unittest
+import speech_recognition as sr
+
+class SpeechRecognitionTest(unittest.TestCase):
+
+    def test_invalid_input(self):
+        r = sr.Recognizer()
+        mic = sr.Microphone()
+
+        # Simulate invalid speech input
+        with mic as source:
+            audio = r.listen(source, timeout=5.0)
+
+            # Recognize the speech input
+            words = r.recognize_google(audio)
+
+            # Assert the expected behavior
+            self.assertEqual(words, None)
+            self.assertIn("Wrong input try again", sys.stdout)
+
+if __name__ == '__main__':
+    unittest.main()
+--------------------------------------------------------------

@@ -1,0 +1,8 @@
+../Core/Src/main.c:103:5:main	1
+../Core/Src/main.c:186:6:SystemClock_Config	3
+../Core/Src/main.c:228:13:MX_ADC1_Init	3
+../Core/Src/main.c:280:13:MX_GPIO_Init	1
+../Core/Src/main.c:306:6:mapDigitalvalueToLeds	6
+../Core/Src/main.c:356:6:getFuelLevelFromADC	1
+../Core/Src/main.c:378:6:mapFuelLevelDigitalToLeds	1
+../Core/Src/main.c:394:6:Error_Handler	1

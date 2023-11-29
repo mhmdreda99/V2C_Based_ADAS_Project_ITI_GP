@@ -1,0 +1,4 @@
+../Core/Src/EEPROM.c:22:10:bytestowrite	2
+../Core/Src/EEPROM.c:34:6:EEPROM_Write	3
+../Core/Src/EEPROM.c:78:6:EEPROM_Read	3
+../Core/Src/EEPROM.c:104:6:EEPROM_PageErase	1
